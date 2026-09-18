@@ -1,5 +1,4 @@
 bool light_up;
-bool flashing = true;
 bool light_status = HIGH;
 
 unsigned long previous = 0;
@@ -17,25 +16,10 @@ void loop() {
     while (digitalRead(3) == LOW){
       delay(50);
     }
-    light_up = !light_up;
-    if (light_up){
-      flashing = !flashing;
-    }
+    digitalWrite(2, light_status);
+    light_status = !light_status;
   }
 
   unsigned long current = millis();
   
-  if (light_up && !flashing){
-    digitalWrite(2, HIGH);
-  }
-  else if (light_up && flashing){
-    if (current - previous >= 200){
-      previous = current;
-      digitalWrite(2, light_status);
-      light_status = !light_status;
-    }
-  }
-  else{
-    digitalWrite(2, LOW);
-  }
 }
