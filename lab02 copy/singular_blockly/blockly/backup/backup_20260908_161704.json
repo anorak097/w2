@@ -1,0 +1,49 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "cyberbrick_ticks_diff",
+          "id": "d-3py!];gvXNO45J@Wsh",
+          "x": 23,
+          "y": 38,
+          "inputs": {
+            "NOW": {
+              "shadow": {
+                "type": "cyberbrick_ticks_ms",
+                "id": "[+PVp90dMP_E,wt`Ux)h"
+              }
+            },
+            "START": {
+              "shadow": {
+                "type": "variables_get",
+                "id": "Q8kC{:tc!(-#teL2M:eT",
+                "fields": {
+                  "VAR": {
+                    "id": "1zs83e3qb5pKF#x;2O%(",
+                    "name": "i",
+                    "type": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "cyberbrick_ticks_ms",
+          "id": "%`o:h0CT4TOKQ//$A-/2",
+          "x": 62,
+          "y": -19
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "i",
+        "id": "1zs83e3qb5pKF#x;2O%("
+      }
+    ]
+  },
+  "board": "cyberbrick"
+}

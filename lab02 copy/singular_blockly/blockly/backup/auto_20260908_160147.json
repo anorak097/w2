@@ -1,0 +1,23 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "CjbUNL8`s{|A?XE1DPj,",
+          "x": -172,
+          "y": -212,
+          "deletable": false
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "i",
+        "id": ")l)yZ~ws6f`7L}a%g%Yc"
+      }
+    ]
+  },
+  "board": "esp32"
+}

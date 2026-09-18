@@ -1,0 +1,119 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "3$DgjFhWdT/ah{bOrDAK",
+          "x": -62,
+          "y": -43,
+          "deletable": false,
+          "inputs": {
+            "SETUP": {
+              "block": {
+                "type": "arduino_pin_mode",
+                "id": "b.9y(Ob62Bml}GU(Ek~0",
+                "fields": {
+                  "PIN": "0",
+                  "MODE": "INPUT"
+                },
+                "next": {
+                  "block": {
+                    "type": "arduino_pin_mode",
+                    "id": "GuGQ%fvH#C}n6h~@sq@A",
+                    "fields": {
+                      "PIN": "0",
+                      "MODE": "INPUT"
+                    },
+                    "next": {
+                      "block": {
+                        "type": "variables_set",
+                        "id": "Ia!uxvOA?7`E}/Ly#szp",
+                        "fields": {
+                          "VAR": {
+                            "id": "W05hFVlkrJLgiS-O]GMx"
+                          }
+                        },
+                        "inputs": {
+                          "VALUE": {
+                            "block": {
+                              "type": "math_number",
+                              "id": "i}x~c#0+)M=Ob;I]XP$D",
+                              "fields": {
+                                "NUM": 0
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "variables_set",
+                            "id": "+|7h3DmZO4G3(Ybs,*5j",
+                            "fields": {
+                              "VAR": {
+                                "id": "GM#s*/jMkt[a{2.e=WlH"
+                              }
+                            },
+                            "inputs": {
+                              "VALUE": {
+                                "block": {
+                                  "type": "math_number",
+                                  "id": "5^d)4:c=tHl[F,H~;z;/",
+                                  "fields": {
+                                    "NUM": 1
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "variables_set",
+                                "id": "HCI1Kzu]v/bX%y4eWREj",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "Gx?NH4SZ?EFz4e=MxWYl"
+                                  }
+                                },
+                                "inputs": {
+                                  "VALUE": {
+                                    "block": {
+                                      "type": "math_number",
+                                      "id": "a(Ni{WrQa2zDN(nt1n#k",
+                                      "fields": {
+                                        "NUM": 1
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "flashing",
+        "id": "GM#s*/jMkt[a{2.e=WlH"
+      },
+      {
+        "name": "light_up",
+        "id": "Gx?NH4SZ?EFz4e=MxWYl"
+      },
+      {
+        "name": "light_status",
+        "id": "W05hFVlkrJLgiS-O]GMx"
+      }
+    ]
+  },
+  "board": "uno"
+}

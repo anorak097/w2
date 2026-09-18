@@ -1,0 +1,505 @@
+{
+  "workspace": {
+    "blocks": {
+      "languageVersion": 0,
+      "blocks": [
+        {
+          "type": "arduino_setup_loop",
+          "id": "N^0I{%_K6ZHsQeS~QInH",
+          "x": 363,
+          "y": 186,
+          "deletable": false,
+          "inputs": {
+            "SETUP": {
+              "block": {
+                "type": "variables_set",
+                "id": ".F:h0;5OkPU*6yT*C91}",
+                "fields": {
+                  "VAR": {
+                    "id": "a[g+SKFG72/4Gv3KBCc!"
+                  }
+                },
+                "inputs": {
+                  "VALUE": {
+                    "block": {
+                      "type": "math_number",
+                      "id": "cQoF*5In[)O#lt=h(yUh",
+                      "fields": {
+                        "NUM": 0
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "variables_set",
+                    "id": "89nPD|*|6$gaf{jcT=14",
+                    "fields": {
+                      "VAR": {
+                        "id": "}MtF|_Ef4(i_0CjWAQ=]"
+                      }
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "math_number",
+                          "id": "~Kp;kf]wXV!^aek[z,3i",
+                          "fields": {
+                            "NUM": 1
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "variables_set",
+                        "id": "b_eg!$v:s+vq8s8uhN_N",
+                        "fields": {
+                          "VAR": {
+                            "id": "B(wbZZ~0+?NiGhcgmG6C"
+                          }
+                        },
+                        "inputs": {
+                          "VALUE": {
+                            "block": {
+                              "type": "math_number",
+                              "id": "!PVSqJjsl(i+{Wf_r|9g",
+                              "fields": {
+                                "NUM": 1
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "arduino_pin_mode",
+                            "id": "R?rd$kLWWtsu3H$mTV6^",
+                            "fields": {
+                              "PIN": "2",
+                              "MODE": "OUTPUT"
+                            },
+                            "next": {
+                              "block": {
+                                "type": "arduino_pin_mode",
+                                "id": "{=,N7Zewxs^h[fV/`N[%",
+                                "fields": {
+                                  "PIN": "3",
+                                  "MODE": "INPUT"
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "arduino_pullup",
+                                    "id": "+VaD9(_ABI]3[uT:wki-",
+                                    "fields": {
+                                      "PIN": "3"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "LOOP": {
+              "block": {
+                "type": "controls_if",
+                "id": "ZXNk|b*]$j=QmX@$N9ey",
+                "inputs": {
+                  "IF0": {
+                    "block": {
+                      "type": "logic_compare",
+                      "id": "bxX=@Nk=0FW[yraG`7s?",
+                      "fields": {
+                        "OP": "EQ"
+                      },
+                      "inputs": {
+                        "A": {
+                          "block": {
+                            "type": "arduino_digital_read",
+                            "id": "..jZ%xOrHfMwx*_TUvnG",
+                            "fields": {
+                              "PIN": "3"
+                            }
+                          }
+                        },
+                        "B": {
+                          "block": {
+                            "type": "arduino_level",
+                            "id": "1N#:^M7!(~qVCju%|fH)",
+                            "fields": {
+                              "LEVEL": "LOW"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "DO0": {
+                    "block": {
+                      "type": "arduino_delay",
+                      "id": "zr^g(#*DoDs/.L?!^1Il",
+                      "fields": {
+                        "TIME": 50
+                      },
+                      "next": {
+                        "block": {
+                          "type": "controls_whileUntil",
+                          "id": "+z%5zb-*n:TWkXl6tq`I",
+                          "fields": {
+                            "MODE": "WHILE"
+                          },
+                          "inputs": {
+                            "BOOL": {
+                              "block": {
+                                "type": "logic_compare",
+                                "id": "FHDF{KZI!O(8_p*j19aJ",
+                                "fields": {
+                                  "OP": "EQ"
+                                },
+                                "inputs": {
+                                  "A": {
+                                    "block": {
+                                      "type": "arduino_digital_read",
+                                      "id": "/,GD_ux+ap3_;pAXfK.m",
+                                      "fields": {
+                                        "PIN": "3"
+                                      }
+                                    }
+                                  },
+                                  "B": {
+                                    "block": {
+                                      "type": "arduino_level",
+                                      "id": "!Gq=oo)[/tTv5/Zsq{@A",
+                                      "fields": {
+                                        "LEVEL": "LOW"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "DO": {
+                              "block": {
+                                "type": "arduino_delay",
+                                "id": ".+!Xp%w63P^?I)6gv]Pb",
+                                "fields": {
+                                  "TIME": 10
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "variables_set",
+                              "id": "D~SU?IWAzp:8@4Klx1`K",
+                              "fields": {
+                                "VAR": {
+                                  "id": "a[g+SKFG72/4Gv3KBCc!"
+                                }
+                              },
+                              "inputs": {
+                                "VALUE": {
+                                  "block": {
+                                    "type": "logic_negate",
+                                    "id": "l*Za+[i?xyWDVQK5V9vP",
+                                    "inputs": {
+                                      "BOOL": {
+                                        "block": {
+                                          "type": "variables_get",
+                                          "id": "0t/7^aX!qKV~PcT7!f{(",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "a[g+SKFG72/4Gv3KBCc!"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "controls_if",
+                                  "id": "NA?]usM}sPc%g=SQ.FzL",
+                                  "inputs": {
+                                    "IF0": {
+                                      "block": {
+                                        "type": "variables_get",
+                                        "id": "-,Qxjfe0[1:FU%,csftS",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "a[g+SKFG72/4Gv3KBCc!"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "DO0": {
+                                      "block": {
+                                        "type": "variables_set",
+                                        "id": "VwA^kfBh5Ek`sheVPYzR",
+                                        "fields": {
+                                          "VAR": {
+                                            "id": "}MtF|_Ef4(i_0CjWAQ=]"
+                                          }
+                                        },
+                                        "inputs": {
+                                          "VALUE": {
+                                            "block": {
+                                              "type": "logic_negate",
+                                              "id": "_4m9W?}%CE~{brUc.9%v",
+                                              "inputs": {
+                                                "BOOL": {
+                                                  "block": {
+                                                    "type": "variables_get",
+                                                    "id": "zJd[{(X3?BRikG0;2kZd",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "}MtF|_Ef4(i_0CjWAQ=]"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "controls_if",
+                                      "id": "79|4CZrDh~Sq;/D_cmT~",
+                                      "extraState": {
+                                        "elseIfCount": 1,
+                                        "hasElse": true
+                                      },
+                                      "inputs": {
+                                        "IF0": {
+                                          "block": {
+                                            "type": "logic_operation",
+                                            "id": "@a?}3o$PrG^]x,Jwh]mJ",
+                                            "fields": {
+                                              "OP": "AND"
+                                            },
+                                            "inputs": {
+                                              "A": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "r~NhTE:Zc.Pt0VIIZ@F:",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "a[g+SKFG72/4Gv3KBCc!"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "B": {
+                                                "block": {
+                                                  "type": "logic_negate",
+                                                  "id": "3:ly,|0mb|Z$(@Y7s~x*",
+                                                  "inputs": {
+                                                    "BOOL": {
+                                                      "block": {
+                                                        "type": "variables_get",
+                                                        "id": "MqZs?2[ylyhf/LrdI7UW",
+                                                        "fields": {
+                                                          "VAR": {
+                                                            "id": "}MtF|_Ef4(i_0CjWAQ=]"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "DO0": {
+                                          "block": {
+                                            "type": "arduino_digital_write",
+                                            "id": "N#?P$eGkgV9D09*Q3wp[",
+                                            "fields": {
+                                              "PIN": "2"
+                                            },
+                                            "inputs": {
+                                              "VALUE": {
+                                                "shadow": {
+                                                  "type": "arduino_level",
+                                                  "id": "8~6$;n5.jhWNJUlq((X@",
+                                                  "fields": {
+                                                    "LEVEL": "HIGH"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "IF1": {
+                                          "block": {
+                                            "type": "logic_operation",
+                                            "id": "HfR[+!P!#SWQ=fg_GfpJ",
+                                            "fields": {
+                                              "OP": "AND"
+                                            },
+                                            "inputs": {
+                                              "A": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "8b+(gW$Iui^$3Gv{F^uA",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "a[g+SKFG72/4Gv3KBCc!"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "B": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "T%`X@bS]Y0i7s-W9Va,0",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "}MtF|_Ef4(i_0CjWAQ=]"
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "DO1": {
+                                          "block": {
+                                            "type": "controls_if",
+                                            "id": "kxv8IjiROioid]|Qpoce",
+                                            "inputs": {
+                                              "DO0": {
+                                                "block": {
+                                                  "type": "arduino_digital_write",
+                                                  "id": "P1wI+^]4Hula)l]J-gsp",
+                                                  "fields": {
+                                                    "PIN": "2"
+                                                  },
+                                                  "inputs": {
+                                                    "VALUE": {
+                                                      "shadow": {
+                                                        "type": "arduino_level",
+                                                        "id": "(YGxAGtj^L^*1=0h3fk)",
+                                                        "fields": {
+                                                          "LEVEL": "HIGH"
+                                                        }
+                                                      },
+                                                      "block": {
+                                                        "type": "variables_get",
+                                                        "id": "g4h,wVS8xul^O`~cQ.}l",
+                                                        "fields": {
+                                                          "VAR": {
+                                                            "id": "B(wbZZ~0+?NiGhcgmG6C"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "variables_set",
+                                                      "id": "vUtWz%R]RXkyDVMjj?eZ",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "B(wbZZ~0+?NiGhcgmG6C"
+                                                        }
+                                                      },
+                                                      "inputs": {
+                                                        "VALUE": {
+                                                          "block": {
+                                                            "type": "logic_negate",
+                                                            "id": "Nv[HTP[|B7:.0BIt;cLl",
+                                                            "inputs": {
+                                                              "BOOL": {
+                                                                "block": {
+                                                                  "type": "variables_get",
+                                                                  "id": "q]0D0/zkcr_zK@F7(_Co",
+                                                                  "fields": {
+                                                                    "VAR": {
+                                                                      "id": "B(wbZZ~0+?NiGhcgmG6C"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "ELSE": {
+                                          "block": {
+                                            "type": "arduino_digital_write",
+                                            "id": "4{Lu0k_S),|ev}{p*.CD",
+                                            "fields": {
+                                              "PIN": "2"
+                                            },
+                                            "inputs": {
+                                              "VALUE": {
+                                                "shadow": {
+                                                  "type": "arduino_level",
+                                                  "id": "+?9Mgf9z_t^kNZaL8:T7",
+                                                  "fields": {
+                                                    "LEVEL": "LOW"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "variables": [
+      {
+        "name": "i",
+        "id": "vGgE0r,8cE+;K}J,|)pJ"
+      },
+      {
+        "name": "light_up",
+        "id": "a[g+SKFG72/4Gv3KBCc!"
+      },
+      {
+        "name": "flashing",
+        "id": "}MtF|_Ef4(i_0CjWAQ=]"
+      },
+      {
+        "name": "light_status",
+        "id": "B(wbZZ~0+?NiGhcgmG6C"
+      }
+    ]
+  },
+  "board": "uno"
+}
