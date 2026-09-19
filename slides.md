@@ -253,7 +253,7 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 100%; padding-right: 20px; box-sizing: border-box;">
-			<video autoplay loop style="height: auto; width: auto;" src="./public/course2-2.mp4"></video> 
+			<video autoplay loop style="height: auto; width: auto;" src="./public/course2-1.mp4"></video> 
     	</div>
 	</div>
 </div>
