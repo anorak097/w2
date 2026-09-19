@@ -138,6 +138,48 @@ color: dark
 ::title::
 
 <h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
+   <span>按鈕開關開燈實作</span><span style="font-size: 2rem; color: gray;">變數應用</span>
+</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+<div style="width: 50%; padding-right: 20px; box-sizing: border-box;">
+<h2>使用變數儲存上次數位 (Digital) 腳位寫入 (Write) 的狀態 (HIGH / LOW ※屬於布林值)</h2>
+
+```mermaid
+
+graph LR
+
+A(按按鈕)
+B{點亮?}
+C(開燈)
+D(關燈)
+
+A-->B
+B--是-->C
+B--否-->D
+```
+
+<h6 style="font-size:1rem;">布林值 (Boolean)，只有 True (1) 與 False (0) 兩種值的資料類型，數位腳位的 HIGH 與 LOW 其實也是布林值。</h6>
+
+</div>
+		<div style="width:50%; display: flex; flex-direction: column; align-items: center; text-align: left; box-sizing: border-box;">
+            <h2></h2>
+		</div>
+	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
    <span>按鈕開關開燈實作</span><span style="font-size: 2rem; color: gray;">簡單的實作 (Ⅱ)</span>
 </h1>
 
@@ -160,6 +202,49 @@ color: dark
 ::title::
 
 <h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
+   <span>按鈕開關開燈實作</span><span style="font-size: 2rem; color: gray;">變數應用</span>
+</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+<div style="width: 50%; padding-right: 20px; box-sizing: border-box;">
+
+```mermaid
+
+graph LR
+
+A(按按鈕)
+B{點亮?}
+C{閃爍?}
+D(關燈)
+E(閃爍)
+F(長亮)
+
+A-->B
+B--是-->C
+B--否-->D
+C--是-->E
+C--否-->F
+```
+
+</div>
+		<div style="width:50%; display: flex; flex-direction: column; align-items: center; text-align: left; box-sizing: border-box;">
+            <h2>布林值 (Boolean)</h2>
+		</div>
+	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
    <span>按鈕開關開燈實作</span><span style="font-size: 2rem; color: gray;">進階按鈕開燈實作</span>
 </h1>
 
@@ -168,7 +253,7 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 100%; padding-right: 20px; box-sizing: border-box;">
-			<video autoplay loop style="height: auto; width: auto;" src="./public/course2-1.mp4"></video> 
+			<video autoplay loop style="height: auto; width: auto;" src="./public/course2-2.mp4"></video> 
     	</div>
 	</div>
 </div>
