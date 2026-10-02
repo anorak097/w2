@@ -6,8 +6,8 @@
         {
           "type": "arduino_setup_loop",
           "id": "3$DgjFhWdT/ah{bOrDAK",
-          "x": -194,
-          "y": -105,
+          "x": -510,
+          "y": -123,
           "deletable": false,
           "inputs": {
             "SETUP": {

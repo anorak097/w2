@@ -165,9 +165,56 @@ B--否-->D
 <h6 style="font-size:1rem;">布林值 (Boolean)，只有 True (1) 與 False (0) 兩種值的資料類型，數位腳位的 HIGH 與 LOW 其實也是布林值。</h6>
 
 </div>
-		<div style="width:50%; display: flex; flex-direction: column; align-items: center; text-align: left; box-sizing: border-box;">
-            <h2></h2>
+		<div style="width:50%; display: flex; flex-direction: column; align-items: left; text-align: left; box-sizing: border-box;">
+            <h2>也就是當「按下按鈕」被觸發時，MCU 會讀取預先儲存的變數來判斷目前燈光狀態。這是因為 LED 僅能被動接收電位，MCU 自身無法主動向外部硬體查詢狀態；MCU 必須透過變數記錄「上次輸出的電位狀態 (HIGH / LOW)」，才能據此決定本次按下按鈕時，應切換為送出或停止送出電位。</h2>
 		</div>
+	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
+   <span>按鈕開關開燈實作</span><span style="font-size: 2rem; color: gray;">範例程式</span>
+</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 50%; padding-right: 20px; box-sizing: border-box;">
+
+```cpp
+bool light_up;
+bool light_status = HIGH;
+
+unsigned long previous = 0;
+
+void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, INPUT_PULLUP);
+}
+void loop() {
+  if (digitalRead(3) == LOW){
+    delay(50);
+    while (digitalRead(3) == LOW){
+      delay(50);
+    }
+    digitalWrite(2, light_status);
+    light_status = !light_status;
+  }
+}
+```
+
+</div>
+		<div style="width:50%; display: flex; flex-direction: column; align-items: center; text-align: left; box-sizing: border-box;">
+			<img src=".\public\course2-1_sample_code_blockly.png">
+    	</div>
 	</div>
 </div>
 
@@ -210,6 +257,8 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
 <div style="width: 50%; padding-right: 20px; box-sizing: border-box;">
+<h2>在點亮狀態下，進一步新增條件來判斷燈光為長亮或閃爍。這種在判斷式內部再嵌入判斷式的結構稱為巢狀判斷 (Nested Conditional)。</h2>
+<br>
 
 ```mermaid
 
@@ -230,9 +279,81 @@ C--否-->F
 ```
 
 </div>
-		<div style="width:50%; display: flex; flex-direction: column; align-items: center; text-align: left; box-sizing: border-box;">
-            <h2>布林值 (Boolean)</h2>
-		</div>
+		<div style="width:50%; display: flex; flex-direction: column; align-items: center; text-align: left; box-sizing: border-box;"><br><br><br><br><br><br>
+<h2>對應的虛擬程式碼 (Pseudocode)：</h2>
+
+```cpp
+IF isLit IS TRUE THEN
+    IF isBlinking IS TRUE THEN
+        EXECUTE Mode_Blink()   // 執行閃爍
+    ELSE
+        EXECUTE Mode_Steady()  // 執行長亮
+    END IF
+ELSE
+    EXECUTE Mode_Off()         // 執行關燈
+END IF
+```
+
+</div>
+	</div>
+</div>
+
+---
+transition: slide-left
+layout: top-title
+color: dark
+---
+
+::title::
+
+<h1 style="font-size: 3rem; padding-top: 10px; padding-bottom: 10px; font-weight: bold;  display: flex; justify-content: space-between;">
+   <span>按鈕開關開燈實作</span><span style="font-size: 2rem; color: gray;">範例程式</span>
+</h1>
+
+::content::
+
+<div style="margin-bottom: 10px;">
+    <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
+        <div style="width: 50%; padding-right: 20px; max-height: 400px; overflow-y: auto; box-sizing: border-box;">
+
+```cpp
+bool light_up;
+bool flashing = true;
+bool light_status = HIGH;
+unsigned long previous = 0;
+void setup() {
+  pinMode(2, OUTPUT);
+  pinMode(3, INPUT_PULLUP);
+}
+void loop() {
+  if (digitalRead(3) == LOW){
+    delay(50);
+    while (digitalRead(3) == LOW){
+      delay(10);
+    }
+    light_up = !light_up;
+    if (light_up){
+      flashing = !flashing;
+    }
+  }
+  if (light_up && !flashing){
+    digitalWrite(2, HIGH);
+  }
+  else if (light_up && flashing){
+    digitalWrite(2, light_status);
+    light_status = !light_status;
+    delay(200);
+  }
+  else{
+    digitalWrite(2, LOW);
+  }
+}
+```
+
+</div>
+		<div style="width: 50%; padding-right: 20px; max-height: 400px; overflow-y: auto; box-sizing: border-box;">
+			<img src=".\public\course2-2_sample_code_blockly.png">
+    	</div>
 	</div>
 </div>
 
@@ -253,7 +374,7 @@ color: dark
 <div style="margin-bottom: 10px;">
     <div style="width: 100%; display: flex; align-items: flex-start; box-sizing: border-box;">
         <div style="width: 100%; padding-right: 20px; box-sizing: border-box;">
-			<video autoplay loop style="height: auto; width: auto;" src="./public/course2-1.mp4"></video> 
+			<video autoplay loop style="height: auto; width: auto;" src="./public/course2-2.mp4"></video> 
     	</div>
 	</div>
 </div>
